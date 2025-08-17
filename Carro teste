@@ -1,0 +1,23 @@
+
+LARGURA = 400
+ALTURA = 600
+
+class JogoCarro(Widget):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.size = (LARGURA, ALTURA)
+        
+        # Jogador
+        self.carro_largura = 50
+        self.carro_altura = 80
+        self.carro_x = LARGURA // 2 - self.carro_largura // 2
+        self.carro_y = 50
+
+        # Obstáculo
+        self.obst_largura = 50
+        self.obst_altura = 80
+        self.obst_x = random.randint(0, LARGURA - self.obst_largura)
+        self.obst_y = ALTURA
+        self.obst_vel = 4
+
+        # Estado
